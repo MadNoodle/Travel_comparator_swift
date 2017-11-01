@@ -25,15 +25,14 @@ class ViewController: UIViewController {
   @IBAction func search(_ sender: UIButton) {
     var dateChoice : Date
     var maxPrice : Int
-    
+    let engine = Engine()
     //getting date info from picker
     dateChoice = datePicker.date
     
     //getting price info from slider
     maxPrice = Int(self.slider.value)
     
-    print(dateChoice)
-    print(maxPrice)
+    engine.compareData(date: dateChoice, price: maxPrice)
     //function to look for proposal
   }
   

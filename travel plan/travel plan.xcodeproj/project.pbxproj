@@ -12,6 +12,9 @@
 		B90B4A991FA1054800E8B0AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90B4A971FA1054800E8B0AC /* Main.storyboard */; };
 		B90B4A9B1FA1054800E8B0AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90B4A9A1FA1054800E8B0AC /* Assets.xcassets */; };
 		B90B4A9E1FA1054800E8B0AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90B4A9C1FA1054800E8B0AC /* LaunchScreen.storyboard */; };
+		B90D7AC01FA896C300DB4710 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D7ABF1FA896C300DB4710 /* Season.swift */; };
+		B9D5BBFB1FA7520C00EEF5FB /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5BBFA1FA7520C00EEF5FB /* Engine.swift */; };
+		B9D5BBFD1FA7535E00EEF5FB /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5BBFC1FA7535E00EEF5FB /* Destination.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		B90B4A9A1FA1054800E8B0AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B90B4A9D1FA1054800E8B0AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B90B4A9F1FA1054800E8B0AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B90D7ABF1FA896C300DB4710 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		B9D5BBFA1FA7520C00EEF5FB /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		B9D5BBFC1FA7535E00EEF5FB /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				B90B4A9A1FA1054800E8B0AC /* Assets.xcassets */,
 				B90B4A9C1FA1054800E8B0AC /* LaunchScreen.storyboard */,
 				B90B4A9F1FA1054800E8B0AC /* Info.plist */,
+				B9D5BBFA1FA7520C00EEF5FB /* Engine.swift */,
+				B9D5BBFC1FA7535E00EEF5FB /* Destination.swift */,
+				B90D7ABF1FA896C300DB4710 /* Season.swift */,
 			);
 			path = "travel plan";
 			sourceTree = "<group>";
@@ -137,6 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90B4A961FA1054800E8B0AC /* ViewController.swift in Sources */,
+				B9D5BBFB1FA7520C00EEF5FB /* Engine.swift in Sources */,
+				B90D7AC01FA896C300DB4710 /* Season.swift in Sources */,
+				B9D5BBFD1FA7535E00EEF5FB /* Destination.swift in Sources */,
 				B90B4A941FA1054800E8B0AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
