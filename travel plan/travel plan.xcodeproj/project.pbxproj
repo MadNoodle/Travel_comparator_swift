@@ -15,6 +15,7 @@
 		B90D7AC01FA896C300DB4710 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D7ABF1FA896C300DB4710 /* Season.swift */; };
 		B9D5BBFB1FA7520C00EEF5FB /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5BBFA1FA7520C00EEF5FB /* Engine.swift */; };
 		B9D5BBFD1FA7535E00EEF5FB /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5BBFC1FA7535E00EEF5FB /* Destination.swift */; };
+		B9EB756F1FA9E807003E28E6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EB756E1FA9E807003E28E6 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B90D7ABF1FA896C300DB4710 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		B9D5BBFA1FA7520C00EEF5FB /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		B9D5BBFC1FA7535E00EEF5FB /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		B9EB756E1FA9E807003E28E6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		B90B4A921FA1054800E8B0AC /* travel plan */ = {
 			isa = PBXGroup;
 			children = (
+				B9EB756E1FA9E807003E28E6 /* SecondViewController.swift */,
 				B90B4A931FA1054800E8B0AC /* AppDelegate.swift */,
 				B90B4A951FA1054800E8B0AC /* ViewController.swift */,
 				B90B4A971FA1054800E8B0AC /* Main.storyboard */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EB756F1FA9E807003E28E6 /* SecondViewController.swift in Sources */,
 				B90B4A961FA1054800E8B0AC /* ViewController.swift in Sources */,
 				B9D5BBFB1FA7520C00EEF5FB /* Engine.swift in Sources */,
 				B90D7AC01FA896C300DB4710 /* Season.swift in Sources */,

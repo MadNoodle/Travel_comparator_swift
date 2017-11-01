@@ -99,15 +99,17 @@ public struct Engine {
   }
   
   /// fetch date from ViewController and compare it to the period.
-  func compareData(date: Date, price: Int){
+  func compareData(date: Date, price: Int) -> String {
     
    let period = seasonCheck(date: date)!
      let destination = parsePossibleDestination(for: period)!
     if priceCheck(price: price, of: destination){
-      print("Destination possible: \(destination.name)")
+      let result = "Destination possible: \(destination.name)"
+      return result
     }
     else {
-      print("Désolé aucune destination disponible dans vos dates et votre budget")
+      let result = "Désolé aucune destination disponible dans vos dates et votre budget"
+      return result
     }
   }
   

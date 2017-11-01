@@ -23,19 +23,24 @@ class ViewController: UIViewController {
   
   //Button on click event
   @IBAction func search(_ sender: UIButton) {
+    
+  performSegue(withIdentifier: "segue", sender: self)
+    
+    //function to look for proposal
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     var dateChoice : Date
     var maxPrice : Int
     let engine = Engine()
+    let secondViewController = segue.destination as! SecondViewController
     //getting date info from picker
     dateChoice = datePicker.date
     
     //getting price info from slider
     maxPrice = Int(self.slider.value)
     
-    engine.compareData(date: dateChoice, price: maxPrice)
-    //function to look for proposal
-  }
-  
+    secondViewController.myString = engine.compareData(date: dateChoice, price: maxPrice)
 }
 
-
+}
