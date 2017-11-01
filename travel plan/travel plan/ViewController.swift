@@ -39,8 +39,10 @@ class ViewController: UIViewController {
     
     //getting price info from slider
     maxPrice = Int(self.slider.value)
+    secondViewController.myImage = engine.compareData(date: dateChoice, price: maxPrice).2!
+    secondViewController.myString = engine.compareData(date: dateChoice, price: maxPrice).0
+    secondViewController.myPrice = engine.compareData(date: dateChoice, price: maxPrice).1
     
-    secondViewController.myString = engine.compareData(date: dateChoice, price: maxPrice)
 }
 
 }

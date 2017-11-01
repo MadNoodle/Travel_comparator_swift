@@ -7,20 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
 /**
- This struct takes all the data input from the view and handle the 
+ This struct takes all the data input from the view and handle the
  */
 public struct Engine {
   let destinations = [
-    Destination("Cuba",200,"Eté"),
-    Destination("Bali",500,"Eté"),
-    Destination("Canada", 500,"Automne"),
-    Destination("Londres", 200,"Automne"),
-    Destination("Val d'Isere", 200, "Hiver"),
-    Destination("Tignes", 500, "Hiver"),
-    Destination("Tahiti", 500,"Printemps"),
-    Destination("Rome", 100,"Printemps")
+    Destination("Cuba",200,"Eté","http://www.wendyperrin.com/wp-content/uploads/2016/04/vintage-cars-old-havana-cuba-cr-michael-petit.jpg"),
+    Destination("Bali",500,"Eté","http://static.asiawebdirect.com/m/bangkok/portals/bali-indonesia-com/homepage/pagePropertiesImage/bali-guide.jpg"),
+    Destination("Canada", 500,"Automne","http://www.cic.gc.ca/images/template/lp-visit.gif"),
+    Destination("Londres", 200,"Automne","http://www.fr.lastminute.com/hotel/img/royaume-uni/londres.jpg"),
+    Destination("Val d'Isere", 200, "Hiver","https://img2.onthesnow.com/image/gg/46/466261.jpg"),
+    Destination("Tignes", 500, "Hiver","http://www.worldsnowboardguide.com//upload/images/all/PRCBXNGA.jpeg"),
+    Destination("Tahiti", 500,"Printemps","http://www.orangesmile.com/ru/foto/Tahiti/Tahiti-b.jpg"),
+    Destination("Rome", 100,"Printemps","https://upload.wikimedia.org/wikipedia/commons/d/d6/St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg")
   ]
  
  /**
@@ -60,7 +61,21 @@ public struct Engine {
     }
     return seasons
   }
-  
+  /**
+   Create image from string
+   */
+  func createThumbnails(from url: String) -> UIImage?{
+    if let url = URL(string: url) {
+      let data = try? Data(contentsOf: url)
+      if let imageData = data {
+        if let image = UIImage(data: imageData) {
+          return image
+        }
+      }
+    }
+    return nil
+    
+  }
   /**
    Check in which period the date coosen by the user is part of
    */
@@ -99,16 +114,16 @@ public struct Engine {
   }
   
   /// fetch date from ViewController and compare it to the period.
-  func compareData(date: Date, price: Int) -> String {
+  func compareData(date: Date, price: Int) -> (String, Int, UIImage?) {
     
    let period = seasonCheck(date: date)!
      let destination = parsePossibleDestination(for: period)!
     if priceCheck(price: price, of: destination){
-      let result = "Destination possible: \(destination.name)"
+      let result = (" \(destination.name)", destination.price, createThumbnails(from: destination.imageUrl))
       return result
     }
     else {
-      let result = "Désolé aucune destination disponible dans vos dates et votre budget"
+      let result = ("Désolé aucune destination disponible dans vos dates et votre budget",0,createThumbnails(from: destination.imageUrl))
       return result
     }
   }

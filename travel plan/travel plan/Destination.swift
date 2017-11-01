@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 public class Destination {
   var name : String
   let price : Int
   let period : String
+  let imageUrl : String
   
-  init(_ name: String,_ price : Int,_ period : String){
+  init(_ name: String,_ price : Int,_ period : String, _ imageUrl: String){
     self.name = name
     self.price = price
     self.period = period
+    self.imageUrl = imageUrl
   }
 }
