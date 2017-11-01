@@ -12,7 +12,16 @@ import Foundation
  This struct takes all the data input from the view and handle the 
  */
 public struct Engine {
-  
+  let destinations = [
+    Destination("Cuba",200,"Eté"),
+    Destination("Bali",500,"Eté"),
+    Destination("Canada", 500,"Automne"),
+    Destination("Londres", 200,"Automne"),
+    Destination("Val d'Isere", 200, "Hiver"),
+    Destination("Tignes", 500, "Hiver"),
+    Destination("Tahiti", 500,"Printemps"),
+    Destination("Rome", 100,"Printemps")
+  ]
  
  /**
    Create a date from 3 integers day, month, year and format it.
@@ -41,28 +50,49 @@ public struct Engine {
  */
  func generateAllSeasons (from startYear:Int, to endYear:Int) ->[Season]{
     var seasons = [Season]()
-    
+  
     for year in startYear...endYear{
+      seasons.append(Season("Hiver", from:(01,01,year), to:(21,03,year)))
       seasons.append(Season("Printemps", from:(22,03,year), to:(21,06,year)))
       seasons.append(Season("Eté", from:(22,06,year), to:(21,09,year)))
       seasons.append(Season("Automne", from:(22,09,year), to:(21,12,year)))
-      seasons.append(Season("Hiver", from:(22,12,year), to:(21,03,year)))
+      seasons.append(Season("Hiver", from:(22,12,year), to:(31,12,year)))
     }
     return seasons
   }
   
-  /// fetch date from ViewController and compare it to the period.
-  func compareData(date: Date, price: Int){
-    let seasons = generateAllSeasons(from: 2017, to: 2020)
-    
+  /**
+   Check in which period the date coosen by the user is part of
+   */
+  func seasonCheck(date: Date) -> String? {
+   let seasons = generateAllSeasons(from: 2017, to: 2020)
     for season in seasons{
+      var targetSeason:String
       if isInRange(date: date, of: season){
-        print("la saison est \(season.name)")
+        targetSeason = season.name
+        print("la saison choisie est \(targetSeason)")
+        return targetSeason
       }
     }
+    return nil
+  }
+  
+  /**
+   Check what are the destination available for the choosen period
+   */
+  func parsePossibleDestination(for period:String){
+    for destination in destinations {
+      if destination.period == period {
+        print("Destination possible: \(destination.name)")
+      }
+    }
+  }
+  
+  /// fetch date from ViewController and compare it to the period.
+  func compareData(date: Date, price: Int){
     
-    print("Your date is : \(date)")
-    print("Your price is \(price)")
+   let period = seasonCheck(date: date)!
+      parsePossibleDestination(for: period)
   }
   
  /// check if a date is in a range and return a bool
