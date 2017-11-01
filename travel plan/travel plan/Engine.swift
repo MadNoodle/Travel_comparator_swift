@@ -77,22 +77,38 @@ public struct Engine {
     return nil
   }
   
+  func priceCheck(price: Int, of destination: Destination) -> Bool{
+    let range = 100
+    if destination.price >= (price - range){
+      if destination.price <= (price + range){
+        return true
+      }
+    }
+    return false
+  }
   /**
    Check what are the destination available for the choosen period
    */
-  func parsePossibleDestination(for period:String){
+  func parsePossibleDestination(for period:String) -> Destination? {
     for destination in destinations {
       if destination.period == period {
-        print("Destination possible: \(destination.name)")
+        return destination
       }
     }
+  return nil
   }
   
   /// fetch date from ViewController and compare it to the period.
   func compareData(date: Date, price: Int){
     
    let period = seasonCheck(date: date)!
-      parsePossibleDestination(for: period)
+     let destination = parsePossibleDestination(for: period)!
+    if priceCheck(price: price, of: destination){
+      print("Destination possible: \(destination.name)")
+    }
+    else {
+      print("Désolé aucune destination disponible dans vos dates et votre budget")
+    }
   }
   
  /// check if a date is in a range and return a bool
