@@ -23,15 +23,15 @@ public struct Engine {
     Destination("Tahiti", 500,"Printemps","http://www.orangesmile.com/ru/foto/Tahiti/Tahiti-b.jpg"),
     Destination("Rome", 100,"Printemps","https://upload.wikimedia.org/wikipedia/commons/d/d6/St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg")
   ]
- 
- /**
+  
+  /**
    Create a date from 3 integers day, month, year and format it.
    it uses gregorian calendar.
    - parameters:
-     - day: Int
-     - month: int
-     - year: Int
- */
+   - day: Int
+   - month: int
+   - year: Int
+   */
   func createDate(day:Int,month:Int,year:Int) -> Date{
     let userCalendar = Calendar.current
     var date = DateComponents()
@@ -43,15 +43,15 @@ public struct Engine {
   }
   
   /**
- Create a season with a start and a end date for a range of year.
+   Create a season with a start and a end date for a range of year.
    it creates an array of Season object
- - parameters:
+   - parameters:
    - startYear: Int
    - endYear: Int
- */
- func generateAllSeasons (from startYear:Int, to endYear:Int) ->[Season]{
+   */
+  func generateAllSeasons (from startYear:Int, to endYear:Int) ->[Season]{
     var seasons = [Season]()
-  
+    
     for year in startYear...endYear{
       seasons.append(Season("Hiver", from:(01,01,year), to:(21,03,year)))
       seasons.append(Season("Printemps", from:(22,03,year), to:(21,06,year)))
@@ -80,7 +80,7 @@ public struct Engine {
    Check in which period the date coosen by the user is part of
    */
   func seasonCheck(date: Date) -> String? {
-   let seasons = generateAllSeasons(from: 2017, to: 2020)
+    let seasons = generateAllSeasons(from: 2017, to: 2020)
     for season in seasons{
       var targetSeason:String
       if isInRange(date: date, of: season){
@@ -110,14 +110,14 @@ public struct Engine {
         return destination
       }
     }
-  return nil
+    return nil
   }
   
   /// fetch date from ViewController and compare it to the period.
   func compareData(date: Date, price: Int) -> (String, Int, UIImage?) {
     
-   let period = seasonCheck(date: date)!
-     let destination = parsePossibleDestination(for: period)!
+    let period = seasonCheck(date: date)!
+    let destination = parsePossibleDestination(for: period)!
     if priceCheck(price: price, of: destination){
       let result = (" \(destination.name)", destination.price, createThumbnails(from: destination.imageUrl))
       return result
@@ -128,7 +128,7 @@ public struct Engine {
     }
   }
   
- /// check if a date is in a range and return a bool
+  /// check if a date is in a range and return a bool
   func isInRange(date: Date, of season:Season) -> Bool{
     
     //checking if it the date is above the starting date
@@ -144,3 +144,4 @@ public struct Engine {
   }
   
 }
+

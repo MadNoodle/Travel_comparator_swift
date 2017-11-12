@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  travel plan
+//  travel
 //
-//  Created by Mathieu Janneau on 25/10/2017.
+//  Created by Mathieu Janneau on 11/11/2017.
 //  Copyright © 2017 Mathieu Janneau. All rights reserved.
 //
 
@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    // Make application start on Home Controller
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.makeKeyAndVisible()
+    window?.rootViewController = HomeViewController()
     return true
   }
 
