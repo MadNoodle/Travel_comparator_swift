@@ -64,33 +64,31 @@
 		B91424AD1FB76B7A0028DB01 /* travel */ = {
 			isa = PBXGroup;
 			children = (
-				B91424AE1FB76B7A0028DB01 /* AppDelegate.swift */,
-				B91424B51FB76B7A0028DB01 /* Assets.xcassets */,
 				B91424F91FB874750028DB01 /* SupportingFiles */,
 				B91424BA1FB76B7A0028DB01 /* Info.plist */,
-				B91424F51FB8727B0028DB01 /* Home */,
+				B91424F51FB8727B0028DB01 /* View */,
 				B91424F61FB872940028DB01 /* Models */,
-				B91424F41FB872710028DB01 /* Result */,
+				B91424F41FB872710028DB01 /* Controllers */,
 			);
 			path = travel;
 			sourceTree = "<group>";
 		};
-		B91424F41FB872710028DB01 /* Result */ = {
+		B91424F41FB872710028DB01 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B91424EA1FB85ED20028DB01 /* ResultViewController.swift */,
-				B91424EB1FB85ED20028DB01 /* ResultViewController.xib */,
+				B91424C21FB774570028DB01 /* HomeViewController.swift */,
 			);
-			path = Result;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B91424F51FB8727B0028DB01 /* Home */ = {
+		B91424F51FB8727B0028DB01 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				B91424C31FB774570028DB01 /* HomeViewController.xib */,
-				B91424C21FB774570028DB01 /* HomeViewController.swift */,
+				B91424EB1FB85ED20028DB01 /* ResultViewController.xib */,
 			);
-			path = Home;
+			path = View;
 			sourceTree = "<group>";
 		};
 		B91424F61FB872940028DB01 /* Models */ = {
@@ -106,6 +104,8 @@
 		B91424F91FB874750028DB01 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B91424AE1FB76B7A0028DB01 /* AppDelegate.swift */,
+				B91424B51FB76B7A0028DB01 /* Assets.xcassets */,
 				B91424F71FB874430028DB01 /* Default-568h@2x.png */,
 			);
 			path = SupportingFiles;
